@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +11,19 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, ThemesListComponent, PostsListComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, SharedModule],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    ThemesListComponent,
+    PostsListComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CoreModule,
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
