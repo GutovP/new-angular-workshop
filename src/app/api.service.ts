@@ -4,23 +4,18 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Theme } from './core/models/theme';
 
-
 const api = environment.apiUrl;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-
-  getThemes(): Observable<Theme> {
-    return this.http.get<Theme>(`${api}/themes`);
+  getThemes() {
+    return this.http.get<Theme[]>(`${api}/themes`);
   }
-getPosts() {
-
-}
-
-
+  getPosts(limit?: number) {
+    return this.http.get<any>(`${api}/posts`)
+  }
 }
