@@ -10,6 +10,7 @@ import { Theme } from '../core/models/theme';
 })
 export class ThemesListComponent implements OnInit{
 
+  isLoading: boolean = true;
   themes: Theme[] = [];
   constructor(private apiService : ApiService) {
 
@@ -18,6 +19,10 @@ export class ThemesListComponent implements OnInit{
     this.apiService.getThemes().subscribe((themes) => {
       console.log(themes)
       this.themes = themes;
+      
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 4000);
     })
   }
 
