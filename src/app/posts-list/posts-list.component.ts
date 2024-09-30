@@ -9,25 +9,22 @@ import { Post } from '../core/models/post';
   styleUrls: ['./posts-list.component.scss'],
 })
 export class PostsListComponent implements OnInit {
-
   isLoading: boolean = true;
   posts: Post[] = [];
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
+    this.fetchPosts();
+  }
+
+  fetchPosts() {
     this.apiService.getPosts().subscribe({
       next: (posts) => {
-        console.log(posts);
         this.posts = posts;
-  
-        setTimeout(() => {
-          this.isLoading = false;
-        }, 2000)
       },
       error: (err) => {
-        this.isLoading = false;
         console.log(err);
-      }
+      },
     });
   }
 }

@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { MainComponent } from './main/main.component';
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

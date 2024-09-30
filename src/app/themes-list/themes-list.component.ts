@@ -10,19 +10,22 @@ import { Theme } from '../core/models/theme';
 })
 export class ThemesListComponent implements OnInit{
 
-  isLoading: boolean = true;
   themes: Theme[] = [];
   constructor(private apiService : ApiService) {
 
   }
   ngOnInit(): void {
-    this.apiService.getThemes().subscribe((themes) => {
-      console.log(themes)
-      this.themes = themes;
-      
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 4000);
+    this.fetchThemes();
+  }
+
+  fetchThemes() {
+    this.apiService.getThemes().subscribe({
+      next: (themes) => {
+        this.themes = themes;
+      },
+      error: (err) => {
+        console.log(err);
+      }
     })
   }
 
