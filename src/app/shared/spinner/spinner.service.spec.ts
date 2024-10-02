@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GlobalLoaderService } from './global-loader.service';
+import { SpinnerService } from './spinner.service';
 
-describe('GlobalLoaderService', () => {
-  let service: GlobalLoaderService;
+describe('SpinnerService', () => {
+  let service: SpinnerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GlobalLoaderService);
+    service = TestBed.inject(SpinnerService);
   });
 
   it('should be created', () => {

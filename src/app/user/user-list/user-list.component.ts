@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../user.service';
 import { User } from 'src/app/core/models/user';
-import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
+import { SpinnerService } from 'src/app/shared/spinner/spinner.service';
 
 @Component({
   selector: 'app-user-list',
@@ -13,19 +13,19 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   constructor(
     private userService: UserService,
-    private globalLoaderService: GlobalLoaderService
+    private spinnerService: SpinnerService
   ) {}
   ngOnInit(): void {
     this.fetchUsers();
   }
 
   fetchUsers() {
-    this.globalLoaderService.showSpinner();
+    this.spinnerService.showSpinner();
 
     this.userService.getUsers().subscribe({
       next: (users) => {
         this.users = users;
-        this.globalLoaderService.hideSpinner();
+        this.spinnerService.hideSpinner();
       },
       error: (err) => {
         console.log(err);

@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class GlobalLoaderService {
+export class SpinnerService {
+
+  constructor() { }
 
   isHidden: boolean = true;
   
