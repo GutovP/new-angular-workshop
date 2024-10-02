@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiService } from '../api.service';
 import { Theme } from '../core/models/theme';
+import { SpinnerService } from '../shared/spinner/spinner.service';
 
 @Component({
   selector: 'app-themes-list',
@@ -11,7 +12,7 @@ import { Theme } from '../core/models/theme';
 export class ThemesListComponent implements OnInit{
 
   themes: Theme[] = [];
-  constructor(private apiService : ApiService) {
+  constructor(private apiService : ApiService, private spinnerService: SpinnerService) {
 
   }
   ngOnInit(): void {
@@ -19,9 +20,12 @@ export class ThemesListComponent implements OnInit{
   }
 
   fetchThemes() {
+this.spinnerService.showSpinner();
+
     this.apiService.getThemes().subscribe({
       next: (themes) => {
         this.themes = themes;
+        this.spinnerService.hideSpinner();
       },
       error: (err) => {
         console.log(err);
