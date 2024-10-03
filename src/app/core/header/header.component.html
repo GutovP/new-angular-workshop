@@ -17,13 +17,7 @@
     <nav>
         <ul>
             <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Themes</a>
-            </li>
-            <li>
-                <a href="#">New Theme</a>
+                <a *ngFor="let item of headerItems" [routerLink]="item.link">{{item.caption}}</a>
             </li>
         </ul>
     </nav>

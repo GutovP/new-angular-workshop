@@ -1,7 +1,7 @@
 import { Injectable, Optional, SkipSelf } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { ToastMessage } from '../../core/models/toast';
+import { ToastMessage } from './toast';
 
 @Injectable({
   providedIn: 'root'
