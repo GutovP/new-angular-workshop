@@ -17,12 +17,12 @@ export class HeaderComponent implements OnInit {
     this.headerItems = [
       { caption: 'Home', link: [''] },
       { caption: 'Themes', link: ['/themes'] },
-      { caption: 'New Theme', link: ['/add-theme'] },
+      { caption: 'New Theme', link: ['/themes/new-theme'] },
     ];
 
     this.authItems = [
-      {caption: 'Login', link: ['/auth/login']},
-      {caption: 'Register', link: ['/auth/register']},
+      { caption: 'Login', link: ['/auth/login'] },
+      { caption: 'Register', link: ['/auth/register'] },
     ];
   }
 }
