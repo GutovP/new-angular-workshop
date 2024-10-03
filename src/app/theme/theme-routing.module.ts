@@ -12,6 +12,7 @@ const routes: Routes = [
   },
   { path: 'current-theme', component: CurrentThemeComponent },
   { path: 'new-theme', component: NewThemeComponent },
+  { path: ':themeId', component: CurrentThemeComponent },
 ];
 
 @NgModule({

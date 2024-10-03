@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { UserListComponent } from './user/user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
-    path:'', component: HomeComponent
+    path: '',
+    pathMatch: 'full',
+    component: HomeComponent,
   },
   {
     path: 'auth',
@@ -14,11 +17,19 @@ const routes: Routes = [
   },
   {
     path: 'themes',
-    loadChildren: () => import('./theme/theme.module').then((m) => m.ThemeModule),
+    loadChildren: () =>
+      import('./theme/theme.module').then((m) => m.ThemeModule),
   },
   {
-    path: 'users', component: UserListComponent,
-  }
+    path: 'users',
+    component: UserListComponent,
+  },
+  // path:'**' must be declared last
+  {
+    path: '404',
+    component: PageNotFoundComponent,
+  },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
