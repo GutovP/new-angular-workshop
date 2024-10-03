@@ -11,12 +11,18 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   headerItems: HeaderItems[] = [];
+  authItems: HeaderItems[] = [];
 
   ngOnInit(): void {
     this.headerItems = [
-      { caption: 'Home ', path: 'home', link: [''] },
-      { caption: 'Themes ', path: 'themes', link: ['/themes'] },
-      { caption: 'New Theme', path: '', link: ['/add-theme'] },
+      { caption: 'Home', link: [''] },
+      { caption: 'Themes', link: ['/themes'] },
+      { caption: 'New Theme', link: ['/add-theme'] },
+    ];
+
+    this.authItems = [
+      {caption: 'Login', link: ['/auth/login']},
+      {caption: 'Register', link: ['/auth/register']},
     ];
   }
 }

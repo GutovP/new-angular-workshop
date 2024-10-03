@@ -6,10 +6,7 @@
         <div *ngIf="!isLoggedIn" class="mini-navbar">
             <ul>
                 <li>
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="#">Register</a>
+                    <a *ngFor="let authItem of authItems" [routerLink]="authItem.link">{{authItem.caption}}</a>
                 </li>
             </ul>
         </div>

@@ -50,19 +50,24 @@ header ul span {
 
 header li {
   list-style: none;
-  padding: 0 0.95em;
 }
 
-header a {
+.mini-navbar a {
   text-decoration: none;
   color: white;
   cursor: pointer;
-  margin: 0.35em;
-  
+  margin: 0 0.95em 0 0;
 }
 
 nav {
   border-top: 1px solid #00acf4;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  margin: 0 1em 0;
 }
 
 .logo {
@@ -89,11 +94,11 @@ nav {
 /* mini-navbar */
 
 .mini-navbar ul {
-    background-color: #6ba1b8;
-    border-radius: 5px;
+  background-color: #6ba1b8;
+  border-radius: 5px;
 }
 
-.mini-navbar ul li+li {
-    border-left: 1px solid lightgrey;
-    padding-left: .5em;
+.mini-navbar ul li a {
+  border-left: 1px solid lightgrey;
+  padding-left: 0.5em;
 }
