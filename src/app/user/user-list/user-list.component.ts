@@ -31,7 +31,5 @@ export class UserListComponent implements OnInit {
         console.log(err);
       },
     });
-
-    
   }
 }

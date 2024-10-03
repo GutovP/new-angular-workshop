@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
       { caption: 'Home', link: [''] },
       { caption: 'Themes', link: ['/themes'] },
       { caption: 'New Theme', link: ['/themes/new-theme'] },
+      { caption: 'Users', link: ['/users'] },
     ];
 
     this.authItems = [
