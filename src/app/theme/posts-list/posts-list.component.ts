@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ApiService } from '../api.service';
-import { Post } from '../core/models/post';
-import { SpinnerService } from '../shared/spinner/spinner.service';
+import { ApiService } from '../../api.service';
+import { Post } from '../../core/models/post';
+import { SpinnerService } from '../../shared/spinner/spinner.service';
 
 @Component({
   selector: 'app-posts-list',
